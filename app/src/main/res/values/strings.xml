@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">TvMaze</string>
+    <string name="shows">Séries</string>
+    <string name="overview">Overview</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="sumary">Sumary</string>
+    <string name="loading">Loading...</string>
+    <string name="episodes">Episodes</string>
+</resources>

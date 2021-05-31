@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.ShowOverviewFragment">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/primaryColor"
+        android:elevation="0dp"
+        app:elevation="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:elevation="0dp"
+            app:elevation="0dp"
+            app:popupTheme="@style/Theme.TvMaze"
+            app:title="@string/overview"
+            app:titleTextColor="@color/white" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/app_bar_layout">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/iv_poster"
+                android:layout_width="120dp"
+                android:layout_height="160dp"
+                android:layout_marginStart="@dimen/margin_start_8dp"
+                android:layout_marginEnd="@dimen/margin_start_8dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_no_picture_24"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ic_open"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_margin="8dp"
+                android:src="@drawable/ic_open"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="@+id/iv_poster"
+                app:layout_constraintTop_toTopOf="@+id/iv_poster" />
+
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="@dimen/margin_start_8dp"
+                android:minLines="1"
+                android:text="@string/loading"
+                android:textColor="@color/primaryLightColor"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@id/iv_poster"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_genres"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textColor="@color/lgray"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@id/tv_name"
+                app:layout_constraintTop_toBottomOf="@id/tv_name" />
+
+            <ImageView
+                android:id="@+id/ic_time"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginTop="@dimen/margin_start_8dp"
+                android:src="@drawable/ic_time"
+                app:layout_constraintStart_toStartOf="@+id/tv_name"
+                app:layout_constraintTop_toBottomOf="@+id/tv_genres" />
+
+            <TextView
+                android:id="@+id/tv_time"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:text=""
+                android:textColor="@color/black"
+                app:layout_constraintBottom_toBottomOf="@+id/ic_time"
+                app:layout_constraintStart_toEndOf="@id/ic_time"
+                app:layout_constraintTop_toTopOf="@id/ic_time" />
+
+            <ImageView
+                android:id="@+id/ic_calendar"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="@dimen/margin_start_8dp"
+                android:src="@drawable/ic_calendar"
+                app:layout_constraintBottom_toBottomOf="@+id/ic_time"
+                app:layout_constraintStart_toEndOf="@+id/tv_time"
+                app:layout_constraintTop_toTopOf="@+id/ic_time" />
+
+            <TextView
+                android:id="@+id/tv_days"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:text=""
+                android:textColor="@color/black"
+                app:layout_constraintBottom_toBottomOf="@+id/ic_calendar"
+                app:layout_constraintStart_toEndOf="@+id/ic_calendar"
+                app:layout_constraintTop_toTopOf="@+id/ic_calendar" />
+
+            <TextView
+                android:id="@+id/tv_seasons"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_start_8dp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/ic_time"
+                app:layout_constraintTop_toBottomOf="@id/ic_time" />
+
+            <TextView
+                android:id="@+id/tv_episodes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_start_8dp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/ic_time"
+                app:layout_constraintTop_toBottomOf="@id/tv_seasons" />
+
+            <View
+                android:id="@+id/separador"
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:background="@color/lbeige"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toBottomOf="@id/iv_poster" />
+
+            <TextView
+                android:id="@+id/title_summary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_start_8dp"
+                android:layout_marginTop="@dimen/margin_start_8dp"
+                android:layout_marginEnd="@dimen/margin_start_8dp"
+                android:text="@string/sumary"
+                android:textColor="@color/primaryLightColor"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@id/tv_summary"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/separador" />
+
+            <TextView
+                android:id="@+id/tv_summary"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_start_8dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="@dimen/margin_start_8dp"
+                android:text="@string/loading"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/title_summary" />
+
+            <View
+                android:id="@+id/separador2"
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:layout_marginTop="@dimen/margin_start_8dp"
+                android:background="@color/lbeige"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toBottomOf="@id/tv_summary" />
+
+            <TextView
+                android:id="@+id/title_ep_list"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_start_8dp"
+                android:layout_marginTop="@dimen/margin_start_8dp"
+                android:layout_marginEnd="@dimen/margin_start_8dp"
+                android:text="@string/episodes"
+                android:textColor="@color/primaryLightColor"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/separador2" />
+
+            <include
+                android:id="@+id/loading_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_start_8dp"
+                layout="@layout/loading_episode"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/title_ep_list"
+                app:layout_constraintBottom_toBottomOf="parent" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvEpisodeList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintTop_toBottomOf="@id/title_ep_list"
+                tools:itemCount="3"
+                tools:listitem="@layout/item_episode"
+                android:visibility="gone"
+                />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.core.widget.NestedScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

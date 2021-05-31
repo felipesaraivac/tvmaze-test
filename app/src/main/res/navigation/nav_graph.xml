@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph.xml"
+    app:startDestination="@id/showsListFragment">
+
+    <fragment
+        android:id="@+id/showsListFragment"
+        android:name="com.test.tvmaze.ui.ShowsListFragment"
+        android:label="shows_list_fragment"
+        tools:layout="@layout/shows_list_fragment" >
+        <action
+            android:id="@+id/action_showsListFragment_to_showOverviewFragment"
+            app:destination="@id/showOverviewFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/showOverviewFragment"
+        android:name="com.test.tvmaze.ui.ShowOverviewFragment"
+        android:label="ShowOverviewFragment"
+        tools:layout="@layout/shows_overview_fragment">
+        <argument android:name="show" />
+        <action
+            android:id="@+id/action_showOverviewFragment_to_imageViewer"
+            app:destination="@id/imageViewer" />
+    </fragment>
+    <fragment
+        android:id="@+id/imageViewer"
+        android:name="com.test.tvmaze.ui.ImageViewer"
+        android:label="fragment_image_viewer"
+        tools:layout="@layout/fragment_image_viewer" />
+</navigation>
